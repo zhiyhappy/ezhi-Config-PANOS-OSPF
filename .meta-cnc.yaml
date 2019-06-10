@@ -35,15 +35,6 @@ variables:
     description: router-id
     default: 
     type_hint: IP Address
-  - name: enable-ospf
-    description: enable-ospf
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
   - name: auth-entry-name
     description: auth-entry-name
     default: 
@@ -101,7 +92,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: parameters
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='{{ vrouter-name }}']/protocol
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name={{ vrouter-name }}]/protocol
     file: parameters-2.xml
 # ---------------------------------------------------------------------
 # end of snippets section
