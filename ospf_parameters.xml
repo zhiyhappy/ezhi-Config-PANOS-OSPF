@@ -1,0 +1,33 @@
+      <entry name="{{ vrouter_name }}">
+        <protocol>
+          <ospf>
+            <enable>{{ enable_ospf }}</enable>
+            <router-id>{{ router_id }}</router-id>
+            <allow-redist-default-route>{{ allow_redistribute_default_route }}</allow-redist-default-route>
+            <reject-default-route>{{ reject_default_route }}</reject-default-route>
+            <rfc1583>{{ rfc1583 }}</rfc1583>
+            <graceful-restart/>
+            <auth-profile>
+              <entry name="{{ auth_profile_name }}">
+                <password>{{ auth_passwd }}</password>
+              </entry>
+            </auth-profile>
+            <area>
+              <entry name="{{ area_id }}">
+                <type>
+                  <{{ area_type }}/>
+                </type>
+                <interface>
+                  <entry name="[[ interface }}">
+                    <enable>{{ interface_enable }}</enable>
+                    <passive>{{ interface_passive_mode }}</passive>
+                  </entry>
+                </interface>
+                <range>
+                  <entry name="{{ ip_summary_range }}"/>
+                </range>
+              </entry>
+            </area>
+          </ospf>
+        </protocol>
+      </entry>

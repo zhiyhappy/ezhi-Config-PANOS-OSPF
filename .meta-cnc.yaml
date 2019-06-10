@@ -27,16 +27,16 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: vrouter-name
-    description: vrouter-name
+  - name: vrouter_name
+    description: vrouter_name
     default: default
     type_hint: text
-  - name: router-id
-    description: router-id
+  - name: router_id
+    description: router_id
     default: 
     type_hint: IP Address
-  - name: enable-ospf
-    description: enable-ospf
+  - name: enable_ospf
+    description: enable_ospf
     default: choices
     type_hint: dropdown
     dd_list:
@@ -44,8 +44,8 @@ variables:
         value: yes
       - key: no
         value: no
-  - name: allow-redist-default-route
-    description: allow-redist-default-route
+  - name: allow_redistribute_default_route
+    description: allow_redistribute_default_route
     default: choices
     type_hint: dropdown
     dd_list:
@@ -53,8 +53,8 @@ variables:
         value: yes
       - key: no
         value: no
-  - name: reject-default-route
-    description: reject-default-route
+  - name: reject_default_route
+    description: reject_default_route
     default: choices
     type_hint: dropdown
     dd_list:
@@ -71,20 +71,20 @@ variables:
         value: yes
       - key: no
         value: no
-  - name: auth-profile-name
-    description: auth-profile-name
+  - name: auth_profile_name
+    description: auth_profile_name
     default: 
     type_hint: text
-  - name: auth-passwd
-    description: auth-passwd
+  - name: auth_passwd
+    description: auth_passwd
     default: 
     type_hint: text
-  - name: area-id
-    description: area-id
+  - name: area_id
+    description: area_id
     default: 
     type_hint: IP Address
-  - name: area-type
-    description: area-type
+  - name: area_type
+    description: area_type
     default: choices
     type_hint: dropdown
     dd_list:
@@ -94,7 +94,7 @@ variables:
         value: nssa
       - key: stub
         value: stub
-  - name: intface
+  - name: interface
     description: interface
     default: all
     type_hint: dropdown
@@ -115,8 +115,8 @@ variables:
         value: ethernet1/7
       - key: ethernet1/8
         value: ethernet1/8
-  - name: interface-enable
-    description: interface-enable
+  - name: interface_enable
+    description: interface_enable
     default: choices
     type_hint: dropdown
     dd_list:
@@ -124,8 +124,8 @@ variables:
         value: yes
       - key: no
         value: no
-  - name: interface-passive-mode
-    description: interface-passive-mode
+  - name: interface_passive_mode
+    description: interface_passive_mode
     default: choices
     type_hint: dropdown
     dd_list:
@@ -133,8 +133,8 @@ variables:
         value: yes
       - key: no
         value: no
-  - name: ip-summary-range
-    description: ip-summary-range
+  - name: ip_summary_range
+    description: ip_summary_range
     default: 
     type_hint: IP Subnet
 # ---------------------------------------------------------------------
@@ -147,6 +147,6 @@ variables:
 snippets:
   - name: parameters
     xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router
-    file: parameters-2.xml
+    file: ospf_parameters.xml
 # ---------------------------------------------------------------------
 # end of snippets section
