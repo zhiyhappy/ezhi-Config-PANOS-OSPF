@@ -1,0 +1,16 @@
+      <area>
+        <entry name={{ area-id }}>
+          <type>
+            <{{ area-type }}/>
+          </type>
+          <interface>
+            <entry name={{ int-name }}>
+              <enable>{{ int-enable-ospf }}</enable>
+              <passive>{{ int-passive-mode }}</passive>
+            </entry>
+          </interface>
+          <range>
+            <entry name={{ range-ip }}/>
+          </range>
+        </entry>
+      </area>

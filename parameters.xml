@@ -1,0 +1,10 @@
+      <enable>{{ enable-ospf }}</enable>
+      <router-id>{{ router-id }}</router-id>
+      <allow-redist-default-route>{{ allow-red-def-route }}</allow-redist-default-route>
+      <reject-default-route>{{ rej-def-route }}</reject-default-route>
+      <rfc1583>{{ rfc1583 }}</rfc1583>
+      <auth-profile>
+        <entry name={{ auth-entry-name }}>
+          <password>{{ auth-passwd }}</password>
+        </entry>
+      </auth-profile>            

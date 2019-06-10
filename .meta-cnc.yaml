@@ -1,0 +1,155 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: ezhi-PANOS-OSPF
+# label used for menu selection
+label: ezhi-PANOS-OSPF
+description: ezhi-PANOS-OSPF
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: panos
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - ezhi-PANOS-OSPF
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: vrouter-name
+    description: vrouter-name
+    default: default
+    type_hint: text
+  - name: router-id
+    description: router-id
+    default: 
+    type_hint: IP Address
+  - name: enable-ospf
+    description: enable-ospf
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: yes
+      - key: option2
+        value: no
+  - name: allow-red-def-route
+    description: allow-red-def-route
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: yes
+      - key: option2
+        value: no
+  - name: rej-def-route
+    description: rej-def-route
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: yes
+      - key: option2
+        value: no
+  - name: rfc1583
+    description: rfc1583
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: yes
+      - key: option2
+        value: no
+  - name: auth-entry-name
+    description: auth-entry-name
+    default: 
+    type_hint: text
+  - name: auth-passwd
+    description: auth-passwd
+    default: 
+    type_hint: text
+  - name: area-id
+    description: area-id
+    default: 
+    type_hint: IP Address
+  - name: area-type
+    description: area-type
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: normal
+      - key: option2
+        value: nssa
+      - key: option3
+        value: stub
+  - name: int-name
+    description: interface dropdown list
+    default: all
+    type_hint: dropdown
+    dd_list:
+      - key: ethernet1/1
+        value: ethernet1/1
+      - key: ethernet1/2
+        value: ethernet1/2
+      - key: ethernet1/3
+        value: ethernet1/3
+      - key: ethernet1/4
+        value: ethernet1/4
+      - key: ethernet1/5
+        value: ethernet1/5
+      - key: ethernet1/6
+        value: ethernet1/6
+      - key: ethernet1/7
+        value: ethernet1/7
+      - key: ethernet1/8
+        value: ethernet1/8
+  - name: int-enable-ospf
+    description: int-enable-ospf
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: yes
+      - key: option2
+        value: no
+  - name: int-passive-mode
+    description: int-passive-mode
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: yes
+      - key: option2
+        value: no
+  - name: range-ip
+    description: range-ip
+    default: 
+    type_hint: IP Subnet
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: ospf-parameters
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='{{ vrouter-name }']/protocol/ospf
+    file: parameters.xml
+  - name: ospf-areas
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='{{ vrouter-name }']/protocol/ospf
+    file: areas.xml
+# ---------------------------------------------------------------------
+# end of snippets section
