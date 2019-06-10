@@ -145,11 +145,8 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: ospf-parameters
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='{{ vrouter-name }']/protocol/ospf
+  - name: parameters
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='default']/protocol
     file: parameters.xml
-  - name: ospf-areas
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='{{ vrouter-name }']/protocol/ospf
-    file: areas.xml
 # ---------------------------------------------------------------------
 # end of snippets section

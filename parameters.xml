@@ -1,3 +1,4 @@
+    <ospf>
       <enable>{{ enable-ospf }}</enable>
       <router-id>{{ router-id }}</router-id>
       <allow-redist-default-route>{{ allow-red-def-route }}</allow-redist-default-route>
@@ -8,3 +9,20 @@
           <password>{{ auth-passwd }}</password>
         </entry>
       </auth-profile>            
+      <area>
+        <entry name={{ area-id }}>
+          <type>
+            <{{ area-type }}/>
+          </type>
+          <interface>
+            <entry name={{ int-name }}>
+              <enable>{{ int-enable-ospf }}</enable>
+              <passive>{{ int-passive-mode }}</passive>
+            </entry>
+          </interface>
+          <range>
+            <entry name={{ range-ip }}/>
+          </range>
+        </entry>
+      </area>
+    </ospf>
