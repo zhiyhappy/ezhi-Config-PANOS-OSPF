@@ -27,10 +27,6 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: vrouter-name
-    description: vrouter-name
-    default: default
-    type_hint: text
   - name: router-id
     description: router-id
     default: 
@@ -92,7 +88,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: parameters
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name={{ vrouter-name }}]/protocol
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='default']/protocol
     file: parameters-2.xml
 # ---------------------------------------------------------------------
 # end of snippets section
