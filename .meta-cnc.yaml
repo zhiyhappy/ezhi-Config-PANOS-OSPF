@@ -37,13 +37,8 @@ variables:
     type_hint: IP Address
   - name: enable_ospf
     description: enable_ospf
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
+    default: 
+    type_hint: text
   - name: allow_redistribute_default_route
     description: allow_redistribute_default_route
     default: choices
