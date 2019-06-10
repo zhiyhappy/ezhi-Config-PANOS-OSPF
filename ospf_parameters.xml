@@ -18,7 +18,7 @@
                   <{{ area_type }}/>
                 </type>
                 <interface>
-                  <entry name="[[ interface }}">
+                  <entry name="{{ interface }}">
                     <enable>{{ interface_enable }}</enable>
                     <passive>{{ interface_passive_mode }}</passive>
                   </entry>
