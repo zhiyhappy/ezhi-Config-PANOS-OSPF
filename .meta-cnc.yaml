@@ -26,59 +26,8 @@ labels:
 # variables used in the configuration templates
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
-variables:
-  - name: router-id
-    description: router-id
-    default: 
-    type_hint: IP Address
-  - name: auth-entry-name
-    description: auth-entry-name
-    default: 
-    type_hint: text
-  - name: auth-passwd
-    description: auth-passwd
-    default: 
-    type_hint: text
-  - name: area-id
-    description: area-id
-    default: 
-    type_hint: IP Address
-  - name: area-type
-    description: area-type
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: normal
-        value: normal
-      - key: nssa
-        value: nssa
-      - key: stub
-        value: stub
-  - name: int-name
-    description: interface dropdown list
-    default: all
-    type_hint: dropdown
-    dd_list:
-      - key: ethernet1/1
-        value: ethernet1/1
-      - key: ethernet1/2
-        value: ethernet1/2
-      - key: ethernet1/3
-        value: ethernet1/3
-      - key: ethernet1/4
-        value: ethernet1/4
-      - key: ethernet1/5
-        value: ethernet1/5
-      - key: ethernet1/6
-        value: ethernet1/6
-      - key: ethernet1/7
-        value: ethernet1/7
-      - key: ethernet1/8
-        value: ethernet1/8
-  - name: range-ip
-    description: range-ip
-    default: 
-    type_hint: IP Subnet
+# variables:
+
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -88,7 +37,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: parameters
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='default']/protocol
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router
     file: parameters-2.xml
 # ---------------------------------------------------------------------
 # end of snippets section
