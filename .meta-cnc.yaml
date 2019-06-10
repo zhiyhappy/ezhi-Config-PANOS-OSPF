@@ -36,36 +36,21 @@ variables:
     default: 
     type_hint: IP Address
   - name: enable_ospf
-    description: enable_ospf
+    description: enable_ospf:yes or no
     default: 
     type_hint: text
   - name: allow_redistribute_default_route
-    description: allow_redistribute_default_route
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
+    description: allow_redistribute_default_route:yes or no
+    default: 
+    type_hint: text
   - name: reject_default_route
-    description: reject_default_route
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
+    description: reject_default_route:yes or no
+    default: 
+    type_hint: text
   - name: rfc1583
-    description: rfc1583
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
+    description: rfc1583:yes or no
+    default: 
+    type_hint: text
   - name: auth_profile_name
     description: auth_profile_name
     default: 
@@ -111,23 +96,13 @@ variables:
       - key: ethernet1/8
         value: ethernet1/8
   - name: interface_enable
-    description: interface_enable
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
+    description: interface_enable:yes or no
+    default: 
+    type_hint: text
   - name: interface_passive_mode
-    description: interface_passive_mode
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
+    description: interface_passive_mode:yes or no
+    default: 
+    type_hint: text
   - name: ip_summary_range
     description: ip_summary_range
     default: 
