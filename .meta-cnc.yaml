@@ -44,33 +44,6 @@ variables:
         value: yes
       - key: no
         value: no
-  - name: allow-red-def-route
-    description: allow-red-def-route
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
-  - name: rej-def-route
-    description: rej-def-route
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
-  - name: rfc1583
-    description: rfc1583
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
   - name: auth-entry-name
     description: auth-entry-name
     default: 
@@ -115,24 +88,6 @@ variables:
         value: ethernet1/7
       - key: ethernet1/8
         value: ethernet1/8
-  - name: int-enable
-    description: int-enable
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
-  - name: int-passive-mode
-    description: int-passive-mode
-    default: choices
-    type_hint: dropdown
-    dd_list:
-      - key: yes
-        value: yes
-      - key: no
-        value: no
   - name: range-ip
     description: range-ip
     default: 
@@ -146,7 +101,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: parameters
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='default']/protocol
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='{{ vrouter-name }}']/protocol
     file: parameters-2.xml
 # ---------------------------------------------------------------------
 # end of snippets section
