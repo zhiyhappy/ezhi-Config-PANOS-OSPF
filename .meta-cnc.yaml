@@ -103,10 +103,6 @@ variables:
     description: interface_passive_mode:yes or no
     default: 
     type_hint: text
-  - name: ip_summary_range
-    description: ip_summary_range
-    default: 
-    type_hint: IP Subnet
 # ---------------------------------------------------------------------
 # end of variables section
 

@@ -23,9 +23,6 @@
                     <passive>{{ interface_passive_mode }}</passive>
                   </entry>
                 </interface>
-                <range>
-                  <entry name="{{ ip_summary_range }}"/>
-                </range>
               </entry>
             </area>
           </ospf>
