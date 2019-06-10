@@ -1,9 +1,9 @@
     <ospf>
-      <enable>{{ enable-ospf }}</enable>
+      <enable>yes</enable>
       <router-id>{{ router-id }}</router-id>
-      <allow-redist-default-route>{{ allow-red-def-route }}</allow-redist-default-route>
-      <reject-default-route>{{ rej-def-route }}</reject-default-route>
-      <rfc1583>{{ rfc1583 }}</rfc1583>
+      <allow-redist-default-route>yes</allow-redist-default-route>
+      <reject-default-route>no</reject-default-route>
+      <rfc1583>yes</rfc1583>
       <auth-profile>
         <entry name={{ auth-entry-name }}>
           <password>{{ auth-passwd }}</password>
@@ -16,8 +16,8 @@
           </type>
           <interface>
             <entry name={{ int-name }}>
-              <enable>{{ int-enable }}</enable>
-              <passive>{{ int-passive-mode }}</passive>
+              <enable>yes/enable>
+              <passive>no</passive>
             </entry>
           </interface>
           <range>

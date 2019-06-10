@@ -115,8 +115,8 @@ variables:
         value: ethernet1/7
       - key: ethernet1/8
         value: ethernet1/8
-  - name: int-enable-ospf
-    description: int-enable-ospf
+  - name: int-enable
+    description: int-enable
     default: choices
     type_hint: dropdown
     dd_list:
@@ -147,6 +147,6 @@ variables:
 snippets:
   - name: parameters
     xpath: /config/devices/entry[@name='localhost.localdomain']/network/virtual-router/entry[@name='default']/protocol
-    file: parameters.xml
+    file: parameters-2.xml
 # ---------------------------------------------------------------------
 # end of snippets section
